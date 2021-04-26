@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>toggle switch</title>
+</head>
+<style type="text/css">
+    .checkbox {
+        height: 0;
+        width: 0;
+        visibility: hidden;
+    }
+    .switch {
+        position: relative;
+        display: flex;
+
+        cursor: pointer;
+
+        width: 200px;
+        height: 100px;
+        border-radius: 200px;
+
+        background-color: #d6d0c3;
+        transition: background-color 0.2s;
+    }
+    .circle {
+        content: "";
+
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        /* This makes the span circular*/
+        width: 90px;
+        height: 90px;
+        border-radius: 90px;
+
+        background: white;
+        transition: 0.2s;
+    }
+    .checkbox:checked + .switch .circle {
+        left: calc(100% - 5px);
+        transform: translateX(-100%);
+    }
+    .checkbox:checked + .switch {
+        background-color: #ffa355;
+    }
+</style>
+<body>
+    <input type="checkbox" class="checkbox" id="input-switch" />
+    <label class="switch" for="input-switch">
+        <span class="circle" />
+    </label>
+</body>
+</html>
